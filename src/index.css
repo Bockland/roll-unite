@@ -1,0 +1,77 @@
+:root {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #593260;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.div-selector-jugador-left {
+   width: 50%;
+   float: left;
+}
+
+.div-selector-jugador-right {
+  width: 50%;
+  float: right;
+}
+
+.div-selector-jugador {
+  width: 60%;
+  background-color: #19072d;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4%;
+  border-radius: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.input-jugador {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.selector-jugadores {
+  margin-top: 5%;
+}
+
+.div-boton-seleccion-equipos {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.div-equipo-seleccion {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+
+.div-volver {
+  width: 100%;
+}
+
+.div-sorteo-player-1 {
+  width: 30%;
+  float: left;
+  margin-left: 5%;
+}
+
+.div-sorteo-player-2 {
+  width: 30%;
+  float: right;
+  margin-right: 5%;
+}
+
+.div-sorteo-pokemon {
+  width: 20%;
+  float: left;
+}
