@@ -1,17 +1,24 @@
 import { Button } from '@mui/material'
 import React from 'react'
 
-export const PoolPokemones = ({roll, pool}) => {
+export const PoolPokemones = ({roll, pool, volver}) => {
 
 
   return (
-    <>
-        <Button
-            variant='contained'
-            onClick={roll}
+    <div className='div-roll'>
+      <Button
+          variant='contained'
+          onClick={roll}
+      >
+        Roll
+      </Button>
+      <Button 
+          variant="contained" 
+          color={"warning"}
+          onClick={() => volver()}
         >
-            Roll
+          Volver
         </Button>
-    </>
+    </div>
   )
 }

@@ -1,11 +1,13 @@
 :root {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Exo 2", sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-weight: 700;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #593260;
+  background: rgb(195,99,34);
+  background: linear-gradient(104deg, rgba(195,99,34,1) 0%, rgb(83, 6, 124) 100%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -74,4 +76,58 @@
 .div-sorteo-pokemon {
   width: 20%;
   float: left;
+}
+
+.div-card-player {
+  background: rgb(13, 21, 29, 0.5) 5%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-player-agil {
+  background: rgb(4,77,143);
+  background: linear-gradient(104deg, rgba(4,77,143,1) 4%, rgba(82,178,217,1) 54%, rgba(0,112,255,1) 100%);
+  border: 1px solid rgb(6, 42, 74) !important;
+  box-shadow: 5px 5px 5px rgb(5, 53, 95) !important;
+}
+
+.card-player-atacante{
+  background: rgb(120,31,7);
+  background: linear-gradient(104deg, rgba(120,31,7,1) 4%, rgba(217,161,82,1) 54%, rgba(255,141,0,1) 100%);
+  border: 1px solid rgb(59, 19, 7) !important;
+  box-shadow: 5px 5px 5px rgb(77, 26, 11) !important;
+}
+
+.card-player-equilibrado {
+  background: rgb(82,6,125);
+  background: linear-gradient(104deg, rgba(82,6,125,1) 4%, rgba(175,57,198,1) 54%, rgba(109,5,145,1) 100%);
+  border: 1px solid rgb(48, 6, 72) !important;
+  box-shadow: 5px 5px 5px rgb(77, 19, 110) !important;
+}
+
+.card-player-defensivo {
+  background: rgb(3,89,42);
+  background: linear-gradient(104deg, rgba(3,89,42,1) 4%, rgba(57,198,140,1) 54%, rgba(4,85,43,1) 100%);
+  border: 1px solid rgb(7, 61, 31) !important;
+  box-shadow: 5px 5px 5px rgb(12, 83, 44) !important;
+}
+
+.card-player-soporte {
+  background: rgb(106,64,18);
+  background: linear-gradient(104deg, rgba(106,64,18,1) 4%, rgba(189,129,62,1) 54%, rgba(156,89,15,1) 100%);
+  border: 1px solid rgb(60, 37, 12) !important;
+  box-shadow: 5px 5px 5px rgb(97, 60, 21) !important;
+}
+
+.card-player {
+  background: rgb(31,30,29);
+  background: linear-gradient(104deg, rgba(31,30,29,1) 4%, rgba(65,61,55,1) 54%, rgba(37,22,6,1) 100%);
+  border: 1px solid rgb(24, 23, 21) !important;
+  box-shadow: 5px 5px 5px rgb(48, 45, 42) !important;
+}
+
+.div-roll {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { useSeleccion } from '../hooks/useSeleccion'
 import { CardJugador } from '../components/CardJugador'
 import { PoolPokemones } from '../components/PoolPokemones'
-import { pokemones } from '../components/config'
 import { IsNullorEmpy, shuffle } from '../functions/comunes'
 import { usePokemon } from '../hooks/usePokemon'
+import { pokemones } from '../config/config_pokemones'
 
 export const RuletaEquipos = () => {
 
@@ -73,21 +73,13 @@ export const RuletaEquipos = () => {
       if(val === false) setPosicion(posicion+1) 
     }
 
-    const new_pool2 = new_pool.filter((p) => p !== poke)
+    const new_pool2 = new_pool.filter((p) => p.name !== poke.name)
     setPool(new_pool2)
   }
 
   return (
     <>
-      <div className='div-volver'>
-        <Button 
-          variant="contained" 
-          color={"warning"}
-          onClick={() => volver()}
-        >
-          Volver
-        </Button>
-      </div>
+      
       <div className='div-sorteo-player-1'>
         {
           equipo_1.map((j) => {
@@ -97,7 +89,7 @@ export const RuletaEquipos = () => {
       </div>
       
       <div className='div-sorteo-pokemon'>
-        <PoolPokemones roll={rollPokemon} pool={pool}/>
+        <PoolPokemones roll={rollPokemon} pool={pool} volver={volver}/>
       </div>
 
       <div className='div-sorteo-player-2'>
