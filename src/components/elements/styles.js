@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 export const WhiteTextField = styled(TextField)({
 
     width: '100%',
-    marginBottom: '5%',
+    marginBottom: '20px',  
 
     '& .MuiInputBase-root': {
         color: 'white',
@@ -15,8 +15,8 @@ export const WhiteTextField = styled(TextField)({
       color: 'white',
     },
     '& label': {
-        color: 'white',
-      },
+      color: 'white',
+    },
     '& .MuiInput-underline:after': {
       borderBottomColor: 'white',
     },
@@ -30,5 +30,9 @@ export const WhiteTextField = styled(TextField)({
       '&.Mui-focused fieldset': {
         borderColor: 'white',
       },
+      
+    },
+    '& .MuiInputBase-input': { 
+        fontSize: '2.25rem' 
     },
 });

@@ -1,24 +1,26 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useSeleccion } from '../hooks/useSeleccion'
-import { CardJugador } from '../components/CardJugador'
-import { PoolPokemones } from '../components/PoolPokemones'
-import { IsNullorEmpy, shuffle } from '../functions/comunes'
-import { usePokemon } from '../hooks/usePokemon'
-import { pokemones } from '../config/config_pokemones'
+import { useNavigate } from 'react-router-dom';
+import { useJugadores } from '../hooks/useJugadores';
+import { useGame } from '../hooks/useGame';
+import { usePokemon } from '../hooks/usePokemon';
+import { IsNullorUndefinedEmpty, shuffle, shuffle_pool } from '../functions/comunes';
+import { CardJugador } from '../components/CardJugador';
+import { PoolPokemones } from '../components/PoolPokemones';
+import { AppLayout } from '../layouts/AppLayout';
+
 
 export const RuletaEquipos = () => {
-
+  
   const navigate = useNavigate()
-  const { equipo_1, equipo_2, setEquipo_1 , setEquipo_2} = useSeleccion();
+  const { equipo_1, equipo_2, setEquipo_1 , setEquipo_2} = useJugadores();
+  const { pool, changePool } = useGame();
   const { getPokemonImg } = usePokemon();
-
-  const [pool, setPool] = useState(pokemones);
+  
   const [posicion, setPosicion] = useState(1);
   const [equipo, setEquipo] = useState(1);
 
-  const volver = () => {
+  const volver = (ruta) => {
     const new_equipo1 = equipo_1.map((j) => {
       return { ...j, pokemon: '' }
     })
@@ -32,14 +34,13 @@ export const RuletaEquipos = () => {
     setPosicion(1)
     setEquipo(1)
 
-    navigate('/')
-
+    navigate(ruta)
   }
-
+  
   const rollPokemon = () => {
 
     let new_pool = pool;
-    shuffle(new_pool);
+    new_pool = shuffle_pool(new_pool);
     const poke = new_pool[0];
 
     console.log(new_pool)
@@ -56,7 +57,7 @@ export const RuletaEquipos = () => {
       setEquipo_1(new_equipo1);
       setEquipo(2);
 
-      const val = equipo_2.some((j) => j.id === posicion && IsNullorEmpy(j.pokemon))
+      const val = equipo_2.some((j) => j.id === posicion && IsNullorUndefinedEmpty(j.pokemon))
       if(val === false) setPosicion(posicion+1) 
 
     } else {
@@ -69,16 +70,16 @@ export const RuletaEquipos = () => {
       setEquipo_2(new_equipo2);
       setEquipo(1);
 
-      const val = equipo_1.some((j) => j.id === posicion && IsNullorEmpy(j.pokemon))
+      const val = equipo_1.some((j) => j.id === posicion && IsNullorUndefinedEmpty(j.pokemon))
       if(val === false) setPosicion(posicion+1) 
     }
 
     const new_pool2 = new_pool.filter((p) => p.name !== poke.name)
-    setPool(new_pool2)
+    changePool(new_pool2)
   }
 
   return (
-    <>
+    <AppLayout>
       
       <div className='div-sorteo-player-1'>
         {
@@ -89,7 +90,7 @@ export const RuletaEquipos = () => {
       </div>
       
       <div className='div-sorteo-pokemon'>
-        <PoolPokemones roll={rollPokemon} pool={pool} volver={volver}/>
+        <PoolPokemones roll={rollPokemon} pool={pool} volver={() => { volver("/seleccion-jugadores") } }/>
       </div>
 
       <div className='div-sorteo-player-2'>
@@ -101,6 +102,6 @@ export const RuletaEquipos = () => {
       </div>
 
       
-    </>
+    </AppLayout>
   )
 }

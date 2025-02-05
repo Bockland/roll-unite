@@ -5,9 +5,8 @@
   font-weight: 700;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: rgb(195,99,34);
-  background: linear-gradient(104deg, rgba(195,99,34,1) 0%, rgb(83, 6, 124) 100%);
+  color: rgba(255, 255, 255, 0.87); 
+  background: rgb(21, 1, 48);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,13 +14,61 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.div-layout {
+  height: 98vh;
+  background: rgb(195,99,34);
+  background: linear-gradient(104deg, rgba(195,99,34,1) 0%, rgb(83, 6, 124) 100%);
+}
+
+.div-layout-menu {
+  height: 98vh;
+  background: rgb(62, 35, 77);
+}
+
+.div-configurador-main {
+  width: 80%;
+  background-color: rgb(81, 53, 97);
+  border: 2px solid rgb(50, 4, 75); 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  padding: 2%;
+  border-radius: 30px;
+}
+
+.div-configurador-confirmar{
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+}
+
+.div-layout-selector {
+  height: 98vh;
+  background: rgb(195,99,34);
+  background: linear-gradient(104deg, rgba(195,99,34,1) 0%, rgb(83, 6, 124) 100%);
+}
+
+.div-selector-jugadores {
+  height: 98vh;
+  padding: 2%;
+}
+
+.div-selector-jugador-botones {
+  width: 10%; 
+  float: left;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .div-selector-jugador-left {
-   width: 50%;
+   width: 45%;
    float: left;
 }
 
 .div-selector-jugador-right {
-  width: 50%;
+  width: 45%;
   float: right;
 }
 
@@ -38,10 +85,6 @@
 .input-jugador {
   width: 100%;
   margin-bottom: 5%;
-}
-
-.selector-jugadores {
-  margin-top: 5%;
 }
 
 .div-boton-seleccion-equipos {
@@ -74,7 +117,7 @@
 }
 
 .div-sorteo-pokemon {
-  width: 20%;
+  width: 30%;
   float: left;
 }
 
@@ -127,7 +170,50 @@
 }
 
 .div-roll {
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espacio entre las columnas */
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.div-dice-button{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dice-button {
+  font-size: 180px; /* Aumenta el tamaño de la fuente */
+  padding: 20px; /* Aumenta el padding */
+  animation: roll 2s infinite;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none; /* Sin fondo */
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+@keyframes roll {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.div-roll-volver {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-children {
+  width: 100%;
+}
+
+.div-children-content {
+  padding-top: 1%;
 }

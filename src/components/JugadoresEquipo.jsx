@@ -13,7 +13,7 @@ export const JugadoresEquipo = ({equipo, setEquipo}) => {
                 }
             } else return j;
         })
-
+        
         setEquipo(new_equipo)
     }
 
@@ -26,6 +26,8 @@ export const JugadoresEquipo = ({equipo, setEquipo}) => {
                             key={j.id}
                             label={`Jugador ${j.id}`} 
                             value={j.name}
+                            //inputProps={{style: {fontSize: 40}}}
+                            //InputLabelProps={{style: {fontSize: 40}}}
                             onChange={(e) => ingresoJugador(e.target, j.id)}
                             focused
                         />

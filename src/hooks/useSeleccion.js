@@ -62,9 +62,6 @@ export const useSeleccion = () => {
             {...pool_jugadores[9], id: 5},
         ]
 
-        console.log(new_equipo1)
-        console.log(new_equipo2)
-
         setEquipo_1(new_equipo1);
         setEquipo_2(new_equipo2);
 

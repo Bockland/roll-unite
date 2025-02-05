@@ -1,8 +1,6 @@
-import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import React from 'react'
-import { IsNullorEmpy } from '../functions/comunes'
-import { atacante } from '../assets/atacante'
-import img_atacante from '../assets/Polygon.png'
+import { IsNullorUndefinedEmpty } from '../functions/comunes';
 
 export const CardJugador = ({jugador, getImg}) => {
 
@@ -13,7 +11,7 @@ export const CardJugador = ({jugador, getImg}) => {
         if(rol === "agil") fondo = "card-player-agil"
         if(rol === "atacante") fondo = "card-player-atacante"
         if(rol === "equilibrado") fondo = "card-player-equilibrado"
-        if(rol === "soporte") fondo = "card-player-soporte"
+        if(rol === "auxiliar") fondo = "card-player-soporte"
 
         if(fondo === "") fondo = "card-player"
 
@@ -73,7 +71,7 @@ export const CardJugador = ({jugador, getImg}) => {
             </CardContent>
         </Box>
         {
-            (IsNullorEmpy(jugador.pokemon)) ? <></> : (
+            (IsNullorUndefinedEmpty(jugador.pokemon)) ? <></> : (
                 <CardMedia
                     component="img"
                     sx={{ 

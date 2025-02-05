@@ -1,0 +1,9 @@
+{
+    "Insert Poke Command": {
+      "prefix": "imagepoke",
+      "body": [
+        "export const ${1:nombre_archivo} = \"data:image/png;base64,\""
+      ],
+      "description": "Insert Poke Command"
+    }
+}

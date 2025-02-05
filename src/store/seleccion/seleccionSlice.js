@@ -11,7 +11,8 @@ const equipo = [
 
 const initialState = {
     equipo_1: equipo,
-    equipo_2: equipo
+    equipo_2: equipo,
+    jugadores: null
 }
 
 export const seleccionSlice = createSlice({
@@ -23,9 +24,12 @@ export const seleccionSlice = createSlice({
         },
         setEquipo2: (state, { payload }) => {
             state.equipo_2 = payload?.equipo_2;
+        },
+        setJugadores: (state, { payload }) => {
+            state.jugadores = payload?.jugadores;
         }
     }
 })
 
-export const { setEquipo1, setEquipo2 } = seleccionSlice.actions
+export const { setEquipo1, setEquipo2, setJugadores } = seleccionSlice.actions
 export default seleccionSlice.reducer

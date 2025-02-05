@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import seleccionSlice from './seleccion/seleccionSlice'
+import jugadorSlice from './jugador/jugadorSlice'
+import configGameSlice from './config/configGameSlice'
 
 export const store = configureStore({
     reducer: {
-      seleccion: seleccionSlice
+      configGame: configGameSlice,
+      jugador: jugadorSlice,
     }
 })
